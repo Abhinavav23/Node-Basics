@@ -7,8 +7,8 @@ const c = 40;
 export default b;
 */
 
-const b = 20;
-const c = 40;
+const b = 'abhinav';
+const c = '40';
 
 // module.exports = b
 // module.exports = {
@@ -22,7 +22,13 @@ function printMyName(){
 }
 printMyName();
 
-// module.exports = {b, c}
+module.exports = {b, c}
+
+//  {
+//     b:b,
+//     c:c
+//  }
+
 // {
 //     b:20,
 //     c:40
