@@ -62,7 +62,7 @@ fs.unlink('./Filesystem/file1.txt', (err) => {
     }
 })
 
-// copyfile, rename, isFile, isDirectory
+// copyfile, rename, isFile, isDirectory, stat
 
 // CRUD 
 // for Dirs
