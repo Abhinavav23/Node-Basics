@@ -5,10 +5,13 @@
 // supports caching
 // easy debugging
 
-console.log('this is a express server');
+// console.log('this is a express server');
 const { json } = require('express');
 const express = require('express');
 const app = express();
+
+// middleware will see later
+app.use(express.json());
 
 
 // W/"1d-uDC2LuOSN74kLIHWuCsVst3sU5s"
@@ -20,7 +23,7 @@ const app = express();
 
 // W/"1c-MPFiyzRJXUhRnkIn1hRDmeoEGjg"
 
-
+/*
 app.get('/', (req, res) => {
     // res.status(203);
     // res.type('text/plain');
@@ -57,7 +60,7 @@ app.get('/about', (req, res) => {
 app.get('/getFile', (req, res) => {
     // res.status(203);
 
-    
+
     res.sendFile('file.txt', {root: __dirname});
 
     // res.sendFile('/Users/abhinav/Desktop/NodeJS/Express/file.txt')
@@ -65,13 +68,51 @@ app.get('/getFile', (req, res) => {
     // res.sendFile('/Users/abhinav/Desktop/NodeJS/Node Basics/EventLoop/node2.png');
 })
 
-console.log(__dirname);
+*/
+
+app.get('/home', (req, res) => {
+    console.log(req.headers);
+    console.log(req.protocol);
+    console.log(req.ip);
+    console.log(req.hostname);
+    console.log(req.path);
+    console.log(req.params);
+    console.log(req.query);
+    console.log(req.body);
+    res.send('<h3>This is a Home Page</h3>')
+})
+.post('/signup', (req, res) => {
+    console.log(req.body);
+    res.send('account created successfully');
+})
+
+
+
+
+
+// console.log(__dirname);
 const port = 3000;
 
 app.listen(port, (err) => {
     if(err) console.log(err);
     console.log(`server started on ${port}`);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const obj = {
