@@ -19,7 +19,7 @@ const users = [
 
 
 const checkUser = (req, res, next) => {
-    console.log(req.body ); //recieved from client
+    console.log(req.body); //recieved from client
     const isUserValid = users.find(el => {
         return el.username === req.body.username
     })
