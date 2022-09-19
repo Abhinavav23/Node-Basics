@@ -1,21 +1,17 @@
 {
-  "name": "express",
+  "name": "expressstructured",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon todo.js",
-    "runNo": "node todo.js",
-    "middleware": "nodemon middleware.js",
-    "static": "nodemon static.js"
+    "start": "nodemon app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.20"
   }
 }
