@@ -8,5 +8,80 @@
 </head>
 <body>
     <h1>product page</h1>
+    <!-- variable declaration -->
+    <% let add = 'Delhi' %> 
+    <% let resident = 'Delhi resident' %> 
+    <% let out = 'outside Delhi' %> 
+
+    <!-- if else -->
+    <% if(add === 'Delhi'){ %> 
+       <h4> <%= resident %> </h4>
+    <% } else { %> 
+        <%= out %>
+    <% } %> 
+
+
+    <!-- function -->
+    <% function calculateAdd(a, b){ %> 
+        <% return a+b %> 
+    <% } %> 
+
+    <h3><%= calculateAdd(10,20) %> </h3> 
+
+    <% for(let i = 0; i<data.length; i++) { %> 
+        <%= data[i] %> 
+    <% } %> 
+
+
+
+
+
+    <!-- forEach -->
+
+    <!-- For of -->
+
+    <!-- While loop -->
+
+
+
+
+    
+
+
+
+
+    <h3> <%= username  %> </h3> 
+    <h3>username</h3>
+
+
+    <!-- <%= role  %> 
+    <%= add %> 
+    <%= address %> -->
+
 </body>
 </html>
+
+
+
+
+<!-- let a = 10
+
+let b = 20
+
+console.log(a)
+
+if(add === 'Delhi'){
+   Delhi resident
+} else {
+    outsider
+} -->
+
+<!-- function printName(){
+    return 'Abhinav'
+}
+
+PrintName() -->
+
+<!-- for(let i = 0; i<10; i++){
+    log(i)
+} -->
