@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="./product.css">
+
+    <link rel="stylesheet" href="/product.css">
+    
+
     <title>Document</title>
 </head>
 <body>
@@ -28,8 +35,15 @@
 
     <h3><%= calculateAdd(10,20) %> </h3> 
 
-    <% for(let i = 0; i<data.length; i++) { %> 
-        <%= data[i] %> 
+    <!-- for loop -->
+
+    <% if(data.length){ %> 
+        <% data.forEach((el) => { %>
+        <h3> <%= el.userId %> </h3> 
+        <h3> <%= el.title %> </h3> 
+        <% }) %> 
+    <% }else { %> 
+        <h3><%= error %></h3>
     <% } %> 
 
 
@@ -50,14 +64,7 @@
 
 
 
-    <h3> <%= username  %> </h3> 
-    <h3>username</h3>
-
-
-    <!-- <%= role  %> 
-    <%= add %> 
-    <%= address %> -->
-
+ 
 </body>
 </html>
 
@@ -85,3 +92,14 @@ PrintName() -->
 <!-- for(let i = 0; i<10; i++){
     log(i)
 } -->
+
+let data = []
+
+<% data.forEach((el) => { %>
+    data.push(`<h3> <%= el.userId %> </h3> 
+    <h3> <%= el.title %> </h3> `)
+ <% }) %> 
+
+
+
+ <div>{[1,2,3,4,5]}</div>

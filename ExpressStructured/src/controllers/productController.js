@@ -1,23 +1,72 @@
-const getProduct = (req, res) => {
+const fetch = require('node-fetch');
+
+const axios = require('axios');
+
+const getProduct = async (req, res) => {
     // res.send('Product page')
     // res.sendFile('/Users/abhinav/Desktop/NodeJS/ExpressStructured/src/views/product/product.htm
-    req.body
-    const data = {
-        username: 'Abhinav',
-        role: 'Instructor',
-        address: {
-            pin: 5600199
-        }
-    }
+    // req.body
+    // const data = {
+    //     username: 'Abhinav',
+    //     role: 'Instructor',
+    //     address: {
+    //         pin: 5600199
+    //     },
+    //     numbers: [1,2,3,4,5]
+    // }
+
     // fetch('https://jsonplaceholder.typicode.com/posts')
     // .then((res) => {
-    //     return res.json()
+    //     return res.json();
     // })
-    // .then((postdata) => {
-    //     res.render('product/product.ejs', {data: postdata});
+    // .then((postData) => {
+    //     console.log(postData);
+    //     res.render('product/product.ejs', {data: postData});
     // });
+    // .catch(() => {
 
-    res.render('product/product.ejs', {data: [1,2,3,4,5]});
+    // })
+
+    let userInfo = {
+        username: 'Abhinav',
+        password: '12345'
+    }
+
+    console.log('start');
+
+
+    // try{
+    //     const response = await fetch('https://jsonplaceholder.typicode.com/post', {
+    //     method: 'POST',
+    //     headers: {'Content-Type': 'application/json'},
+    //     body: JSON.stringify(userInfo)
+    //     });
+    //     // console.log(response.ok);
+    //     const data = await response.json();
+    //     // console.log(data);
+    //     // console.log('end');
+    //     // res.send('data posted');
+    //     res.render('product/product.ejs', {data});
+    // } catch(e){
+    //     res.render('product/product.ejs', {error: e.message});
+    // }
+
+    try{
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        console.log(response.data);
+        res.render('productFolder/product.ejs', {data: response.data});
+    }catch(e){
+        res.render('productFolder/product.ejs', {error: e.message});
+    }
+    
+
+    
+
+    // {
+    //     data: data
+    // }
+
+    // res.render('product/product.ejs', data);
     
 }
 
