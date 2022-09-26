@@ -4,7 +4,10 @@ const app = express();
 const productRouter = require('./src/routes/productRoute');
 const cartRouter = require('./src/routes/cartRoute');
 
-app.use(express.static('./src/views'));
+app.use('/test', express.static('./src/views/'));
+
+// correct path for file ----> http://localhost:5800/product/product.css
+// http://localhost:5800/test/
 
 app.use('/product', productRouter);
 app.use('/cart', cartRouter);

@@ -54,11 +54,10 @@ const getProduct = async (req, res) => {
     try{
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
         console.log(response.data);
-        res.render('productFolder/product.ejs', {data: response.data});
+        res.render('product/product.ejs', {data: response.data});
     }catch(e){
-        res.render('productFolder/product.ejs', {error: e.message});
+        res.render('product/product.ejs', {error: e.message});
     }
-    
 
     
 
