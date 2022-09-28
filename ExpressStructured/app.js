@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors')
+
 const productRouter = require('./src/routes/productRoute');
 const cartRouter = require('./src/routes/cartRoute');
+app.use(cors());
 
 app.use('/test', express.static('./src/views/'));
 

@@ -58,9 +58,6 @@ const getProduct = async (req, res) => {
     }catch(e){
         res.render('product/product.ejs', {error: e.message});
     }
-
-    
-
     // {
     //     data: data
     // }
@@ -70,7 +67,9 @@ const getProduct = async (req, res) => {
 }
 
 const shirtProduct = (req, res) => {
-    res.send('shirt page')
+
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.send('shirt page');
 }
 
 const jeanProduct = (req, res) => {
