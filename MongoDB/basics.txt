@@ -1,0 +1,94 @@
+Data --
+
+Database --
+
+types of Dbs 
+
+Advantages of NoSql(Mongo)
+
+Basics of Mongo
+
+
+
+MongoDB
+--- Database
+--- collections
+---- Documents
+---- format of documents ---> BSON({key: value})
+    Binary encode JSON
+
+1. create a Db 
+    use 'NameOfDb'
+    if db is not present then create a db
+    if present, switch to that db
+    wont be visible til you insert something in that Db
+
+2. create a collections
+    db.createCollection('collectionName')
+
+
+Data types:
+Extended form of JSON types
+1. String 
+2. Integers
+3. array
+4. boolean
+5. Object
+6. null
+7. Double -- floating - decimal
+
+ObjectId --->24 caracters value gets created with every
+ document and gives a document unique identification
+Date ---> new Date()
+timestamps --> 
+
+CRUD operations
+1. create and Insert document in collection
+    db.collectionName.insertOne() ---> insert only one document
+    db.collectionName.insertMany() ---> 
+    db.collectionName.insert() ---> deprecated
+
+2. Read operations
+    find() -- returns all the documents in an Array
+    find({})
+    findOne() ---
+    findOne({})
+    find(conditions)-- condition can be one or many
+    findOne(conditions)--
+    findOneAndReplace --- {name: 'abhi'}, {age: 30}
+    {age: 30} -- overriding 
+    {name: 'abhi', age: 30} -- appending 
+    FindOneAndDelete ---
+
+3. update
+    updateOne()
+        db.Student.updateOne({name: 'Abhinav'}, { $set: {age: 30}})
+         will match first documents matching the condition and update that
+    updateMany()
+        db.Student.updateMany({name: 'Abhinav'}, { $set: {age: 30}})
+        will match all the documents matching the condition and update all of them
+
+
+4. delete
+    deleteOne()
+    deleteMany()
+
+variations with queries
+
+    Projection
+    allows you to select only required properties from document
+        for selecting properties pass the value as 1 and vice versa
+    Ex - db.Student.find({role: 'Instructor'}, {name: 1, age: 1, _id: 0})
+
+more variants in queries
+    $lt   < less than
+    $gt   > greater than
+    $gte   >= greater than equal to
+    $lte  < less than equal to
+
+$in 
+$all
+$size
+
+$and
+$or
